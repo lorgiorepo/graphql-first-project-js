@@ -7,7 +7,7 @@ const typeDefs = `
         # Esta es la descripcion del curso
         descripcion: String!
         profesor: Profesor
-        rating: Float
+        rating: Float @deprecated(reason: "Ya no se usara mas a partir del siguiente periodo academico")
         comentarios: [Comentario]
     }
 
@@ -38,8 +38,32 @@ const typeDefs = `
     }
 `
 
+const resolvers = {
+    Query: {
+        cursos: () => {
+            return [{
+                id: 1,
+                titulo: 'Curso de Graphql',
+                descripcion: 'Aprendiendo Graphql'
+            }, {
+                id: 2,
+                titulo: 'Curso de Java',
+                descripcion: 'Aprendiendo Java'
+            }]
+        }
+    },
+    Curso: {
+        profesor: () => {
+            return {
+                nombre: 'Lorgio'
+            }
+        }
+    }
+}
+
 const schema = makeExecutableSchema({
-    typeDefs
+    typeDefs,
+    resolvers
 });
 
 module.exports = schema;

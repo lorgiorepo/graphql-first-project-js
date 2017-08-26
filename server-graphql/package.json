@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+      "start": "nodemon index.js"
+  },
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "graphql": "^0.11.1",
     "graphql-server-express": "^1.1.2",
     "graphql-tools": "^1.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

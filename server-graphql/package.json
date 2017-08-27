@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-      "start": "nodemon index.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
+    "casual": "^1.5.17",
     "express": "^4.15.4",
     "graphql": "^0.11.1",
     "graphql-server-express": "^1.1.2",

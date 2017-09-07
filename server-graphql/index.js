@@ -13,7 +13,9 @@ app.use(
         schema,
         formatError: (error) => {
             return {
-                mensaje: error.message
+                code: 'AK22',
+                cause: error.name,
+                description: error.message
             }
         }
     })

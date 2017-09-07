@@ -29,7 +29,10 @@ const resolvers = {
         },
         profesorDelete: (_, args) => {
             return Profesor.query().findById(args.profesorId).then((profesor) => {
-                return Profesor.query().deleteById(args.profesorId).then(() => profesor);
+                return Profesor.query().deleteById(args.profesorId).then((deleteRows) => {
+                    if(deleteRows > 0) return profesor
+                    else throw new Error(`El profesor con identificador ${args.profesorId} no se encuentra para eliminacion`);
+                });
             })
         }
     }

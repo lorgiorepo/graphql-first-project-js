@@ -7,11 +7,13 @@ $ yarn run start
 
 http://localhost:5678/graphiql
 
-# Query with union type
+### Queries
 
-```sh
+### Query with union type for Buscar
+
+```graphql
 {
-  buscar(query: "GraphQL") {
+  buscar(query: "Whatever") {
     __typename
     ... on Profesor {
       nombre
@@ -19,6 +21,16 @@ http://localhost:5678/graphiql
     ... on Curso {
       titulo
     }
+  }
+}
+```
+
+### Query for test error handler
+
+```graphql
+mutation BorrarProfesor {
+  profesorDelete(profesorId: 1) {
+    nombre
   }
 }
 ```

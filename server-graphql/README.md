@@ -3,11 +3,14 @@
 First project for server and client on graphql
 
 To run this project
+
+```ssh
 $ yarn run start
+```
 
 http://localhost:5678/graphiql
 
-### Queries
+## Queries
 
 ### Query with union type for Buscar
 

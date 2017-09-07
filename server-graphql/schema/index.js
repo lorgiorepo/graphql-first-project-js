@@ -27,6 +27,7 @@ const schema = makeExecutableSchema({
     resolvers
 });
 
+if(false) {
 addMockFunctionsToSchema({
     schema,
     mocks: {
@@ -45,5 +46,6 @@ addMockFunctionsToSchema({
     },
     preserveResolvers: true
 });
+}
 
 module.exports = schema;
